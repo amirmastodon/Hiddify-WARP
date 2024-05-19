@@ -1,0 +1,2 @@
+# WOW config Hiddify
+
