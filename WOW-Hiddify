@@ -47,33 +47,21 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "104.21.69.44",
-        "172.67.204.84",
-        "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "188.114.96.3",
+        "188.114.97.3",
         "104.18.202.232",
         "104.18.203.232",
-        "188.114.97.3",
-        "188.114.96.3",
         "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3"
+        "2a06:98c1:3121::3",
+        "188.114.96.3",
+        "188.114.97.3"
       ]
     },
     "independent_cache": true
   },
   "inbounds": [
-    {
-      "type": "tun",
-      "tag": "tun-in",
-      "mtu": 9000,
-      "inet4_address": "172.19.0.1/28",
-      "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true,
-      "stack": "mixed",
-      "sniff": true,
-      "sniff_override_destination": true
-    },
     {
       "type": "mixed",
       "tag": "mixed-in",
@@ -97,8 +85,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "Hiddify Warp ✅",
-        "WARP § 0"
+        "Iran",
+        "Main"
       ],
       "default": "auto"
     },
@@ -106,48 +94,42 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "Hiddify Warp ✅",
-        "WARP § 0"
+        "Iran",
+        "Main"
       ],
       "url": "http://cp.cloudflare.com/",
-      "interval": "10m0s",
-      "idle_timeout": "1h40m0s"
+      "interval": "10m0s"
     },
     {
       "type": "wireguard",
-      "tag": "Hiddify Warp ✅",
-      "detour": "direct",
+      "tag": "Iran",
       "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:818c:ec84:cad9:80a7:49b6/128"
+        "172.16.0.2/32",
+        "2606:4700:110:8503:195a:5edc:8292:6e1c/128"
       ],
-      "private_key": "+Bho19Y8oyFxYWjZlSvrTnHgsc4+cqfejMq2A69oZGk=",
-      "server": "162.159.192.244",
-      "server_port": 1070,
+      "private_key": "eA0CUNoQpDJJD7FCIu6J/2ul01BxLokzcdhC4eFYUVY=",
+      "server": "162.159.192.73",
+      "server_port": 3138,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "AAAA",
+      "reserved": "58Zv",
       "mtu": 1280,
-      "fake_packets": "5-10",
-      "fake_packets_size": "40-100",
-      "fake_packets_delay": "20-200"
+      "fake_packets": "5-10"
     },
     {
       "type": "wireguard",
-      "tag": "WARP § 0",
-      "detour": "Hiddify Warp ✅",
+      "tag": "Main",
+      "detour": "Iran",
       "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:8bb2:e96f:c3f0:9902:c085/128"
+        "172.16.0.2/32",
+        "2606:4700:110:810d:22fc:417b:b0df:1918/128"
       ],
-      "private_key": "qJjGLYIwt7yilIp2xnrAIke3/UZQCPMQV2WNM5UDP1o=",
-      "server": "162.159.192.244:",
-      "server_port": 1070,
+      "private_key": "+FRwqBgOiZX0dxbaj2JyTrucHO78fl/Z3vjPpdhnwVI=",
+      "server": "162.159.192.73",
+      "server_port": 3138,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "AAAA",
+      "reserved": "f39s",
       "mtu": 1280,
-      "fake_packets": "8-15",
-      "fake_packets_size": "40-100",
-      "fake_packets_delay": "20-250"
+      "fake_packets": "5-10"
     },
     {
       "type": "dns",
@@ -216,8 +198,7 @@
       "path": "clash.db"
     },
     "clash_api": {
-      "external_controller": "127.0.0.1:6756",
-      "secret": "ZsdAaMq8ORXu4jzI"
+      "external_controller": "127.0.0.1:6756"
     }
   }
 }
